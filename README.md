@@ -1,10 +1,27 @@
-# ExamenIOS
+# Examen iOS 
 
-Door Remko Vermaeren 
-Klas 3D
+Derde examenperiode
 
-FollowFitness -- Volg je fitness oefeningen
+Door Remko Vermaeren - Klas 3D
 
-Start met een overzicht van alle trainingen, per training kunnen oefeningen gemaakt worden.
-Trainingen en oefeningen kunnen worden aangemaakt.
-Data-opslag via realm.io (Extra informatie op www.realm.io). Dit is de extra moeilijkheid (niet gezien tijdens de les) van het project. 
+## FollowFitness
+
+Via de FollowFitness app kan een gebruiker zich inloggen of registreren. Eens ingelogged heeft een gebruiker een overzicht van alle trainingen. Een training bevat oefeningen die gebruiker kan toevoegen en verwijderen. De applictie maakt gebruik van AlamoFire en SwiftyJSON.
+
+De applicatie is gebasseerd op http://followfitness.herokuapp.com. Een gebruiker kan dus de iOS applicatie of de web applicatie gebruiken.
+
+## Installatie
+
+1. Download het project.
+2. Installeer Cocoapods indien nodig (https://cocoapods.org/).
+3. Voer `pod install` uit in het gedownloade project.
+4. Open het `FollowFitness.xcworkspace` bestand.
+5. Build het project.
+6. Run het project.
+
+## Bestaande gebruiker
+Username : `test@test.be`
+
+Password : `test`
+
+

@@ -8,13 +8,42 @@
 
 import Foundation
 import UIKit
-import RealmSwift
+import Alamofire
+import SwiftyJSON
+
 class TrainingOverviewViewController: UITableViewController {
-    let realm = try! Realm()
-    var trainingList : Results<Training> {
-        get {
-            return realm.objects(Training.self)
+    var trainingList : [Training] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadTraining()
+    }
+    
+    func loadTraining(){
+        
+        let token = UserDefaults.standard.string(forKey: "token")
+        let id = UserDefaults.standard.string(forKey: "id")
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer " + token!,
+            "Accept": "application/json"
+        ]
+        Alamofire.request("http://followfitness.herokuapp.com/api/"+id!+"/trainings", method: .get, headers: headers).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                for (_,subJson):(String, JSON) in json {
+                    self.trainingList.append(Training.init(json: subJson))
+                }
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
         }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,10 +58,11 @@ class TrainingOverviewViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "trainingCell", for: indexPath)
                 let training = trainingList[indexPath.row]
                 cell.textLabel!.text = "\(training.name)"
-                cell.detailTextLabel!.text = "\(training.date)"
+                let formatterToNewDate = DateFormatter()
+                formatterToNewDate.dateFormat = "EEEE, MMM d, yyyy"
+                let dateAsString = formatterToNewDate.string(from: training.date as Date)
+                cell.detailTextLabel!.text = dateAsString
                 return cell
-        
-       
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,12 +78,12 @@ class TrainingOverviewViewController: UITableViewController {
     
     @IBAction func unwindFromAdd(_ segue: UIStoryboardSegue) {
         let source = segue.source as! AddingViewController
-        if let training = source.training {
+        if source.training != nil {
             tableView.beginUpdates()
-            try! self.realm.write({
-                self.realm.add(training)
-                self.tableView.insertRows(at: [IndexPath.init(row: self.trainingList.count-1, section: 0)], with: .automatic)
-            })
+//            try! self.realm.write({
+//                self.realm.add(training)
+//                self.tableView.insertRows(at: [IndexPath.init(row: self.trainingList.count-1, section: 0)], with: .automatic)
+//            })
             tableView.endUpdates()
         }
     }
@@ -62,11 +92,11 @@ class TrainingOverviewViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-                let item = trainingList[indexPath.row]
-                try! self.realm.write({
-                    self.realm.delete(item)
-                })
-                
+                _ = trainingList[indexPath.row]
+//                try! self.realm.write({
+//                    self.realm.delete(item)
+//                })
+            
                 tableView.deleteRows(at:[indexPath], with: .automatic)
                 
             }

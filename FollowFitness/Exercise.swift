@@ -7,16 +7,31 @@
 //
 
 import Foundation
-import RealmSwift
+import SwiftyJSON
 
-class Exercise: Object {
-    var name = ""
-    var repeats = 0
-    var kilo = 0
-    var sets = 0
-// Specify properties to ignore (Realm won't persist these)
+class Exercise {
+    let id : String
+    let name : String
+    let machine : String
+    var sets : [Set] = []
     
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
+    init(id: String, name : String, machine : String, sets : [Set]) {
+        self.id = id
+        self.name = name
+        self.machine = machine
+        self.sets = sets
+    }
+}
+extension Exercise {
+    convenience init(json : JSON) {
+        let id = json["_id"].stringValue
+        let name = json["name"].stringValue
+        let machine = json["machine"].stringValue
+        let s = json["sets"]
+        var sets : [Set] = []
+        for (_,subJson):(String, JSON) in s {
+            sets.append(Set.init(json: subJson))
+        }
+        self.init(id: id, name: name, machine: machine, sets: sets)
+    }
 }

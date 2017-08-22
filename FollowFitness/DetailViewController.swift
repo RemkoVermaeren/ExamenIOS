@@ -13,9 +13,9 @@ class DetailViewController: UITableViewController {
     
     override func viewDidLoad() {
         title = exercise.name
-        repeatView.text = "\(exercise.repeats)"
-        kiloView.text = "\(exercise.kilo)"
-        setView.text = "\(exercise.sets)"
+        //repeatView.text = "\(exercise.repeats)"
+        //kiloView.text = "\(exercise.kilo)"
+        //setView.text = "\(exercise.sets)"
     }
     
    

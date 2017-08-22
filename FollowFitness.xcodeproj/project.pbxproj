@@ -9,20 +9,20 @@
 /* Begin PBXBuildFile section */
 		291409321E35128D00B2727F /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291409311E35128D00B2727F /* Exercise.swift */; };
 		291409341E35135300B2727F /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291409331E35135300B2727F /* Training.swift */; };
-		291409371E35168900B2727F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291409351E35168900B2727F /* Realm.framework */; };
-		291409381E35168900B2727F /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 291409351E35168900B2727F /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		291409391E35168900B2727F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291409361E35168900B2727F /* RealmSwift.framework */; };
-		2914093A1E35168900B2727F /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 291409361E35168900B2727F /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2914093E1E352F3E00B2727F /* TrainingOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2914093D1E352F3E00B2727F /* TrainingOverviewController.swift */; };
 		291409421E35379C00B2727F /* AddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291409411E35379C00B2727F /* AddingViewController.swift */; };
+		291C0A571F488E590076376E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 291C0A561F488E590076376E /* Podfile */; };
 		2920E6B01E32714A009343D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2920E6AF1E32714A009343D7 /* AppDelegate.swift */; };
-		2920E6B21E32714A009343D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2920E6B11E32714A009343D7 /* ViewController.swift */; };
 		2920E6B51E32714A009343D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2920E6B31E32714A009343D7 /* Main.storyboard */; };
 		2920E6B71E32714A009343D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2920E6B61E32714A009343D7 /* Assets.xcassets */; };
 		2920E6BA1E32714A009343D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2920E6B81E32714A009343D7 /* LaunchScreen.storyboard */; };
 		292DDFA21E3569F1004A8E7F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DDFA11E3569F1004A8E7F /* DetailViewController.swift */; };
 		2948AE451E3556D200A0BF65 /* ExerciseOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948AE441E3556D200A0BF65 /* ExerciseOverviewController.swift */; };
 		2948AE471E355CFB00A0BF65 /* AddingExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948AE461E355CFB00A0BF65 /* AddingExerciseViewController.swift */; };
+		29C9BB551F4B5F29008EA22A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9BB541F4B5F29008EA22A /* LoginViewController.swift */; };
+		29C9BB571F4B6BD2008EA22A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9BB561F4B6BD2008EA22A /* RegisterViewController.swift */; };
+		29C9BB591F4B83CF008EA22A /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9BB581F4B83CF008EA22A /* Set.swift */; };
+		627737A05F36041F96B998A2 /* Pods_FollowFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ED53A94CB2067D3038E5F2 /* Pods_FollowFitness.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,8 +32,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2914093A1E35168900B2727F /* RealmSwift.framework in Embed Frameworks */,
-				291409381E35168900B2727F /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,24 +39,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18ED53A94CB2067D3038E5F2 /* Pods_FollowFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FollowFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		291409311E35128D00B2727F /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		291409331E35135300B2727F /* Training.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
-		291409351E35168900B2727F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		291409361E35168900B2727F /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		2914093D1E352F3E00B2727F /* TrainingOverviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingOverviewController.swift; sourceTree = "<group>"; };
 		291409411E35379C00B2727F /* AddingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingViewController.swift; sourceTree = "<group>"; };
+		291C0A561F488E590076376E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		2920E6AC1E32714A009343D7 /* FollowFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FollowFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2920E6AF1E32714A009343D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2920E6B11E32714A009343D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2920E6B41E32714A009343D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2920E6B61E32714A009343D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2920E6B91E32714A009343D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2920E6BB1E32714A009343D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2920E6C11E350EF4009343D7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../../../Desktop/realm-swift-2.3.0/ios/swift-3.0.2/Realm.framework"; sourceTree = "<group>"; };
-		2920E6C21E350EF4009343D7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../../../Desktop/realm-swift-2.3.0/ios/swift-3.0.2/RealmSwift.framework"; sourceTree = "<group>"; };
 		292DDFA11E3569F1004A8E7F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2948AE441E3556D200A0BF65 /* ExerciseOverviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseOverviewController.swift; sourceTree = "<group>"; };
 		2948AE461E355CFB00A0BF65 /* AddingExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingExerciseViewController.swift; sourceTree = "<group>"; };
+		29C9BB541F4B5F29008EA22A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		29C9BB561F4B6BD2008EA22A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		29C9BB581F4B83CF008EA22A /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		649512A656F725CBFE289486 /* Pods-FollowFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FollowFitness.release.xcconfig"; path = "Pods/Target Support Files/Pods-FollowFitness/Pods-FollowFitness.release.xcconfig"; sourceTree = "<group>"; };
+		8D7B8C151F57CD90E47A7BA0 /* Pods-FollowFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FollowFitness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FollowFitness/Pods-FollowFitness.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,14 +66,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				291409391E35168900B2727F /* RealmSwift.framework in Frameworks */,
-				291409371E35168900B2727F /* Realm.framework in Frameworks */,
+				627737A05F36041F96B998A2 /* Pods_FollowFitness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06F3C903B30AA0A0A6A81B06 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8D7B8C151F57CD90E47A7BA0 /* Pods-FollowFitness.debug.xcconfig */,
+				649512A656F725CBFE289486 /* Pods-FollowFitness.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2914093C1E352F2400B2727F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +90,8 @@
 				2948AE441E3556D200A0BF65 /* ExerciseOverviewController.swift */,
 				2948AE461E355CFB00A0BF65 /* AddingExerciseViewController.swift */,
 				292DDFA11E3569F1004A8E7F /* DetailViewController.swift */,
+				29C9BB541F4B5F29008EA22A /* LoginViewController.swift */,
+				29C9BB561F4B6BD2008EA22A /* RegisterViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -89,12 +99,10 @@
 		2920E6A31E32714A009343D7 = {
 			isa = PBXGroup;
 			children = (
-				291409351E35168900B2727F /* Realm.framework */,
-				291409361E35168900B2727F /* RealmSwift.framework */,
-				2920E6C11E350EF4009343D7 /* Realm.framework */,
-				2920E6C21E350EF4009343D7 /* RealmSwift.framework */,
 				2920E6AE1E32714A009343D7 /* FollowFitness */,
 				2920E6AD1E32714A009343D7 /* Products */,
+				06F3C903B30AA0A0A6A81B06 /* Pods */,
+				59D11BDFEDF0A11C917F6EE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,10 +117,10 @@
 		2920E6AE1E32714A009343D7 /* FollowFitness */ = {
 			isa = PBXGroup;
 			children = (
+				291C0A561F488E590076376E /* Podfile */,
 				2914093C1E352F2400B2727F /* Controller */,
 				2920E6C91E35118D009343D7 /* Model */,
 				2920E6AF1E32714A009343D7 /* AppDelegate.swift */,
-				2920E6B11E32714A009343D7 /* ViewController.swift */,
 				2920E6B31E32714A009343D7 /* Main.storyboard */,
 				2920E6B61E32714A009343D7 /* Assets.xcassets */,
 				2920E6B81E32714A009343D7 /* LaunchScreen.storyboard */,
@@ -126,8 +134,17 @@
 			children = (
 				291409311E35128D00B2727F /* Exercise.swift */,
 				291409331E35135300B2727F /* Training.swift */,
+				29C9BB581F4B83CF008EA22A /* Set.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		59D11BDFEDF0A11C917F6EE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18ED53A94CB2067D3038E5F2 /* Pods_FollowFitness.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,10 +154,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2920E6BE1E32714A009343D7 /* Build configuration list for PBXNativeTarget "FollowFitness" */;
 			buildPhases = (
+				D08799C64C4F9F6B0CC739C6 /* [CP] Check Pods Manifest.lock */,
 				2920E6A81E32714A009343D7 /* Sources */,
 				2920E6A91E32714A009343D7 /* Frameworks */,
 				2920E6AA1E32714A009343D7 /* Resources */,
 				2914093B1E35168900B2727F /* Embed Frameworks */,
+				D11473495003C38AF1E3E222 /* [CP] Embed Pods Frameworks */,
+				D10F296FE3D2E6F3F70B095D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,25 +212,84 @@
 			files = (
 				2920E6BA1E32714A009343D7 /* LaunchScreen.storyboard in Resources */,
 				2920E6B71E32714A009343D7 /* Assets.xcassets in Resources */,
+				291C0A571F488E590076376E /* Podfile in Resources */,
 				2920E6B51E32714A009343D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D08799C64C4F9F6B0CC739C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FollowFitness-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D10F296FE3D2E6F3F70B095D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FollowFitness/Pods-FollowFitness-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D11473495003C38AF1E3E222 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FollowFitness/Pods-FollowFitness-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FollowFitness/Pods-FollowFitness-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2920E6A81E32714A009343D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C9BB551F4B5F29008EA22A /* LoginViewController.swift in Sources */,
+				29C9BB571F4B6BD2008EA22A /* RegisterViewController.swift in Sources */,
 				292DDFA21E3569F1004A8E7F /* DetailViewController.swift in Sources */,
 				2914093E1E352F3E00B2727F /* TrainingOverviewController.swift in Sources */,
-				2920E6B21E32714A009343D7 /* ViewController.swift in Sources */,
 				291409341E35135300B2727F /* Training.swift in Sources */,
 				2920E6B01E32714A009343D7 /* AppDelegate.swift in Sources */,
 				291409321E35128D00B2727F /* Exercise.swift in Sources */,
 				2948AE451E3556D200A0BF65 /* ExerciseOverviewController.swift in Sources */,
 				291409421E35379C00B2727F /* AddingViewController.swift in Sources */,
+				29C9BB591F4B83CF008EA22A /* Set.swift in Sources */,
 				2948AE471E355CFB00A0BF65 /* AddingExerciseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +411,7 @@
 		};
 		2920E6BF1E32714A009343D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D7B8C151F57CD90E47A7BA0 /* Pods-FollowFitness.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -349,6 +429,7 @@
 		};
 		2920E6C01E32714A009343D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 649512A656F725CBFE289486 /* Pods-FollowFitness.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

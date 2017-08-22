@@ -8,12 +8,21 @@
 
 import Foundation
 import UIKit
-import RealmSwift
 class ExerciseOverviewViewController: UITableViewController {
     
     var training: Training?
-    let realm = try! Realm()
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //Load the cell elements
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -46,11 +55,11 @@ class ExerciseOverviewViewController: UITableViewController {
         let source = segue.source as! AddingExerciseViewController
         if let exercise = source.exercise {
             tableView.beginUpdates()
-            try! self.realm.write({
-                training?.exercises.append(exercise)
-                self.realm.add(exercise)
-                self.tableView.insertRows(at: [IndexPath.init(row: (self.training?.exercises.count)!-1, section: 0)], with: .automatic)
-            })
+//            try! self.realm.write({
+//                training?.exercises.append(exercise)
+//                self.realm.add(exercise)
+//                self.tableView.insertRows(at: [IndexPath.init(row: (self.training?.exercises.count)!-1, section: 0)], with: .automatic)
+//            })
             tableView.endUpdates()
         }
     }
@@ -59,10 +68,10 @@ class ExerciseOverviewViewController: UITableViewController {
         if editingStyle == .delete {
             tableView.beginUpdates()
             let item = training?.exercises[indexPath.row]
-            try! self.realm.write({
-                training?.exercises.remove(objectAtIndex: indexPath.row)
-                self.realm.delete(item!)
-            })
+//            try! self.realm.write({
+//                training?.exercises.remove(objectAtIndex: indexPath.row)
+//                self.realm.delete(item!)
+//            })
             
             tableView.deleteRows(at:[indexPath], with: .automatic)
             

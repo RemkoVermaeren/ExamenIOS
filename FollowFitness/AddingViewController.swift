@@ -15,11 +15,11 @@ class AddingViewController: UITableViewController {
     
 
     @IBAction func save() {
-        if let name = nameField.text , name.characters.count > 1 {
+        if let n = nameField.text , n.characters.count > 1 {
             let date = dateField.date
-            training = Training()
-            training!.date = date as NSDate
-            training!.name = name
+            //training = Training.init(name: n, date: date as NSDate, exercises: [])
+            //training!.date = date as NSDate
+            //training!.name = name
             
             performSegue(withIdentifier: "added", sender: self)
         }

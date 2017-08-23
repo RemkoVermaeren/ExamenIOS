@@ -71,6 +71,9 @@ class TrainingOverviewViewController: UITableViewController {
             let destination = segue.destination as! ExerciseOverviewViewController
             let selectedIndex = tableView.indexPathForSelectedRow!.row
             destination.training = trainingList[selectedIndex]
+            case "logOut":
+            UserDefaults.standard.removeObject(forKey: "token")
+            UserDefaults.standard.removeObject(forKey: "id")
         default:
             break
         }

@@ -22,6 +22,7 @@
 		29C9BB551F4B5F29008EA22A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9BB541F4B5F29008EA22A /* LoginViewController.swift */; };
 		29C9BB571F4B6BD2008EA22A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9BB561F4B6BD2008EA22A /* RegisterViewController.swift */; };
 		29C9BB591F4B83CF008EA22A /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9BB581F4B83CF008EA22A /* Set.swift */; };
+		29EB220D1F4D07FD00CA934C /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EB220C1F4D07FD00CA934C /* TabController.swift */; };
 		627737A05F36041F96B998A2 /* Pods_FollowFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ED53A94CB2067D3038E5F2 /* Pods_FollowFitness.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		29C9BB541F4B5F29008EA22A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		29C9BB561F4B6BD2008EA22A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		29C9BB581F4B83CF008EA22A /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		29EB220C1F4D07FD00CA934C /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		649512A656F725CBFE289486 /* Pods-FollowFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FollowFitness.release.xcconfig"; path = "Pods/Target Support Files/Pods-FollowFitness/Pods-FollowFitness.release.xcconfig"; sourceTree = "<group>"; };
 		8D7B8C151F57CD90E47A7BA0 /* Pods-FollowFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FollowFitness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FollowFitness/Pods-FollowFitness.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				292DDFA11E3569F1004A8E7F /* DetailViewController.swift */,
 				29C9BB541F4B5F29008EA22A /* LoginViewController.swift */,
 				29C9BB561F4B6BD2008EA22A /* RegisterViewController.swift */,
+				29EB220C1F4D07FD00CA934C /* TabController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C9BB551F4B5F29008EA22A /* LoginViewController.swift in Sources */,
+				29EB220D1F4D07FD00CA934C /* TabController.swift in Sources */,
 				29C9BB571F4B6BD2008EA22A /* RegisterViewController.swift in Sources */,
 				292DDFA21E3569F1004A8E7F /* DetailViewController.swift in Sources */,
 				2914093E1E352F3E00B2727F /* TrainingOverviewController.swift in Sources */,

@@ -16,6 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Check user login
+        let token = UserDefaults.standard.string(forKey: "token")
+        if(token == nil)
+        {
+            // So, here user already login then set your root view controller, let's say `SecondViewController``
+        
+            // then set your root view controller
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "loginController")
+        }
+        else
+        {
+            // It means you need to your root view controller is your login view controller, so let's create it
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "tabController")
+
+        }
+        
+        
         return true
     }
 

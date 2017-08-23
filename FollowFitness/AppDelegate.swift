@@ -21,21 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let token = UserDefaults.standard.string(forKey: "token")
         if(token == nil)
         {
-            // So, here user already login then set your root view controller, let's say `SecondViewController``
-        
-            // then set your root view controller
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "loginController")
         }
         else
         {
-            // It means you need to your root view controller is your login view controller, so let's create it
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "tabController")
-
         }
-        
-        
         return true
     }
 

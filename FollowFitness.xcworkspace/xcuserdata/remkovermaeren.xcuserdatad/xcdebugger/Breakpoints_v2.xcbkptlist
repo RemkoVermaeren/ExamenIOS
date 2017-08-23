@@ -83,5 +83,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FollowFitness/LoginViewController.swift"
+            timestampString = "525143304.160239"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "logIn(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FollowFitness.LoginViewController.(logIn (Any) -&gt; ()).(closure #1)"
+                  moduleName = "FollowFitness"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/remkovermaeren/Documents/Slides/IOS/ExamenIOS/FollowFitness/LoginViewController.swift"
+                  timestampString = "525143314.847098"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "2974">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FollowFitness.LoginViewController.(logIn (Any) -&gt; ()).(closure #1)"
+                  moduleName = "FollowFitness"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/remkovermaeren/Documents/Slides/IOS/ExamenIOS/FollowFitness/LoginViewController.swift"
+                  timestampString = "525143314.850218"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "3113">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

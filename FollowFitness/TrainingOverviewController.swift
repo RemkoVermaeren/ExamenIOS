@@ -74,6 +74,7 @@ class TrainingOverviewViewController: UITableViewController {
             case "logOut":
             UserDefaults.standard.removeObject(forKey: "token")
             UserDefaults.standard.removeObject(forKey: "id")
+            // TODO RESET LOGINGCONTROLLER
         default:
             break
         }

@@ -18,7 +18,7 @@ class AddingSetViewController : UITableViewController {
     var trainingId: String = ""
     var exerciseId : String = ""
     
-    var newSet : Set? 
+    var newSet : Set?
     
     @IBAction func hideKeyboard(_ sender: UITextField) {
         sender.resignFirstResponder()
@@ -27,22 +27,23 @@ class AddingSetViewController : UITableViewController {
     
     @IBAction func save() {
         if let n = repeats.text , n.characters.count > 0, let kilo = kilos.text, kilo.characters.count > 0  {
-            self.newSet = Set.init(id: "", repeats: Int(n)!, weights: Int(kilo)!)
-
-            Service.shared.saveSet(weights: Int(kilo)!, repeats: Int(n)!, trainingId: trainingId, exerciseId: exerciseId) {
-                response in
-                switch response {
-                case .success( _):
-                    self.performSegue(withIdentifier: "saveSet", sender: self)
-                case .failure(let error):
-                    print(error)
-                }
+            if let rep = Int(n), let kil = Int(kilo){
+                self.newSet = Set.init(id: "", repeats: rep, weights: kil)
+                
+                Service.shared.saveSet(weights: kil, repeats: rep, trainingId: trainingId, exerciseId: exerciseId) {
+                    response in
+                    switch response {
+                    case .success( _):
+                        self.performSegue(withIdentifier: "saveSet", sender: self)
+                    case .failure(let error):
+                        print(error)
+                    }
                 }
             }
-        
-        
             
         }
+        
     }
+}
 
 

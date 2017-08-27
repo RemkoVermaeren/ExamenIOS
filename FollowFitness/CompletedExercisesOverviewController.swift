@@ -14,14 +14,11 @@ class CompletedExercisesOverviewController : UITableViewController {
     var training: Training?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //Load the cell elements
+        super.viewDidLoad()        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,15 +36,15 @@ class CompletedExercisesOverviewController : UITableViewController {
         cell.machine.text = "\(exercise.machine)"
         return cell
     }
-            override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                switch segue.identifier! {
-                case "sets":
-                    let destination = segue.destination as! SetOverviewViewController
-                    let selectedIndex = tableView.indexPathForSelectedRow!.row
-                    destination.exercise = training?.exercises[selectedIndex]
-                default:
-                    break
-                }
-            }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier! {
+        case "sets":
+            let destination = segue.destination as! SetOverviewViewController
+            let selectedIndex = tableView.indexPathForSelectedRow!.row
+            destination.exercise = training?.exercises[selectedIndex]
+        default:
+            break
+        }
+    }
     
 }

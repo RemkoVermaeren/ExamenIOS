@@ -25,6 +25,8 @@
 		2920E6BA1E32714A009343D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2920E6B81E32714A009343D7 /* LaunchScreen.storyboard */; };
 		2948AE451E3556D200A0BF65 /* ExerciseOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948AE441E3556D200A0BF65 /* ExerciseOverviewController.swift */; };
 		2948AE471E355CFB00A0BF65 /* AddingExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948AE461E355CFB00A0BF65 /* AddingExerciseViewController.swift */; };
+		299A6E7F1F534F5100034D58 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A6E7E1F534F5100034D58 /* Service.swift */; };
+		299A6E811F534F6600034D58 /* BackendResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A6E801F534F6600034D58 /* BackendResponse.swift */; };
 		29C9BB551F4B5F29008EA22A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9BB541F4B5F29008EA22A /* LoginViewController.swift */; };
 		29C9BB571F4B6BD2008EA22A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9BB561F4B6BD2008EA22A /* RegisterViewController.swift */; };
 		29C9BB591F4B83CF008EA22A /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9BB581F4B83CF008EA22A /* Set.swift */; };
@@ -67,6 +69,8 @@
 		2920E6BB1E32714A009343D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2948AE441E3556D200A0BF65 /* ExerciseOverviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseOverviewController.swift; sourceTree = "<group>"; };
 		2948AE461E355CFB00A0BF65 /* AddingExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingExerciseViewController.swift; sourceTree = "<group>"; };
+		299A6E7E1F534F5100034D58 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		299A6E801F534F6600034D58 /* BackendResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendResponse.swift; sourceTree = "<group>"; };
 		29C9BB541F4B5F29008EA22A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		29C9BB561F4B6BD2008EA22A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		29C9BB581F4B83CF008EA22A /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 				2920E6B61E32714A009343D7 /* Assets.xcassets */,
 				2920E6B81E32714A009343D7 /* LaunchScreen.storyboard */,
 				2920E6BB1E32714A009343D7 /* Info.plist */,
+				299A6E7E1F534F5100034D58 /* Service.swift */,
+				299A6E801F534F6600034D58 /* BackendResponse.swift */,
 			);
 			path = FollowFitness;
 			sourceTree = "<group>";
@@ -306,6 +312,7 @@
 				29C9BB551F4B5F29008EA22A /* LoginViewController.swift in Sources */,
 				291FE86D1F524C5300491380 /* ExerciseCell.swift in Sources */,
 				29EB220D1F4D07FD00CA934C /* TabController.swift in Sources */,
+				299A6E811F534F6600034D58 /* BackendResponse.swift in Sources */,
 				29C9BB571F4B6BD2008EA22A /* RegisterViewController.swift in Sources */,
 				2914093E1E352F3E00B2727F /* TrainingOverviewController.swift in Sources */,
 				291409341E35135300B2727F /* Training.swift in Sources */,
@@ -313,6 +320,7 @@
 				291FE86F1F525D3200491380 /* SetCell.swift in Sources */,
 				291FE8711F525D6C00491380 /* SetOverviewViewController.swift in Sources */,
 				291FE8651F520BD100491380 /* AddingSetViewController.swift in Sources */,
+				299A6E7F1F534F5100034D58 /* Service.swift in Sources */,
 				291FE86B1F524BAE00491380 /* CompletedExercisesOverviewController.swift in Sources */,
 				291FE8671F52459B00491380 /* CompletedTrainingViewController.swift in Sources */,
 				291409321E35128D00B2727F /* Exercise.swift in Sources */,

@@ -15,32 +15,26 @@ class LoginViewController : UIViewController {
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
 
     @IBOutlet weak var btnLogIn: UIButton!
     
     @IBAction func logIn(_ sender: Any) {
-        let parameters: Parameters = [
-            "username": usernameField.text!,
-            "password": passwordField.text!
-        ]
-        
-        Alamofire.request("http://followfitness.herokuapp.com/login",method: .post,parameters: parameters, encoding: URLEncoding.httpBody).responseJSON {
+        Service.shared.login(username: usernameField.text!, password: passwordField.text!){
             response in
-            switch response.result {
+            switch response {
             case .success(let value):
-                let json = JSON(value)
-                UserDefaults.standard.set(json["token"].string, forKey: "token")
-                UserDefaults.standard.set(json["id"].string, forKey: "id")
-                print(json)
+                print(value)
                 self.performSegue(withIdentifier: "showTrainings", sender: self)
             case .failure(let error):
-                print(error)
+                self.errorLabel.text = "\(error)"
             }
         }
     }
+    
     @IBAction func unwindFromLogout(_ segue: UIStoryboardSegue) {
         UserDefaults.standard.removeObject(forKey: "token")
         UserDefaults.standard.removeObject(forKey: "id")
-}
-
+    }
+    
 }

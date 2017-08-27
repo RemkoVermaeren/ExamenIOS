@@ -22,29 +22,20 @@ class TrainingOverviewViewController: UITableViewController {
     
     func loadTraining(){
         trainingList.removeAll()
-        let token = UserDefaults.standard.string(forKey: "token")
-        let id = UserDefaults.standard.string(forKey: "id")
-        let headers: HTTPHeaders = [
-            "Authorization": "Bearer " + token!,
-            "Accept": "application/json"
-        ]
-        Alamofire.request("http://followfitness.herokuapp.com/api/"+id!+"/uncompletedtrainings", method: .get, headers: headers).responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                for (_,subJson):(String, JSON) in json {
-                    self.trainingList.append(Training.init(json: subJson))
-                }
+        Service.shared.getUncompletedTrainings { response in
+            switch response {
+            case .success( let trainings) :
+                self.trainingList = trainings as! [Training]
                 self.tableView.reloadData()
-            case .failure(let error):
-                print(error)
+            
+            case .failure (let error) :
+            print(error)
             }
         }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -68,25 +59,14 @@ class TrainingOverviewViewController: UITableViewController {
             (sender: MGSwipeTableCell!) -> Bool in
             let indexPath = self.tableView.indexPath(for: cell)
             let training = self.trainingList[indexPath!.row]
-            self.trainingList.remove(at: indexPath!.row)
-            let token = UserDefaults.standard.string(forKey: "token")
-            let id = UserDefaults.standard.string(forKey: "id")
-            let headers: HTTPHeaders = [
-                "Authorization": "Bearer " + token!,
-                "Accept": "application/json"
-            ]
-            let url = "http://followfitness.herokuapp.com/api/"+id!+"/trainings/" + training.id + "/reverseiscompleted"
-            Alamofire.request(url, method: .put, headers: headers).responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    print(JSON(value))
+            Service.shared.reverseIsCompleted(trainingId: training.id){ response in
+                switch response {
+                case .success( _) :
+                    self.trainingList.remove(at: indexPath!.row)
                     self.tableView.reloadData()
-                    
-                case .failure(let error):
-                    print(error)
+                case .failure( _) : break
                 }
             }
-            
             return true
         }
         cell.leftButtons = [button]
@@ -109,61 +89,21 @@ class TrainingOverviewViewController: UITableViewController {
         loadTraining()
     }
     
-    
-    /* Overriding this method triggers swipe actions (e.g. swipe to delete) */
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.tableView.beginUpdates()
             let training = trainingList[indexPath.row]
-            trainingList.remove(at: indexPath.row)
-            tableView.deleteRows(at:[indexPath], with: .automatic)
-            self.tableView.endUpdates()
-            
-            let token = UserDefaults.standard.string(forKey: "token")
-            let id = UserDefaults.standard.string(forKey: "id")
-            let headers: HTTPHeaders = [
-                "Authorization": "Bearer " + token!,
-                "Accept": "application/json"
-            ]
-            let url = "http://followfitness.herokuapp.com/api/"+id!+"/trainings/" + training.id
-            Alamofire.request(url, method: .delete, headers: headers).responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    print(JSON(value))
+                       Service.shared.deleteTraining(trainingId: training.id) { response in
+                switch response {
+                case .success( _):
+                    self.tableView.beginUpdates()
+                    self.trainingList.remove(at: indexPath.row)
+                    tableView.deleteRows(at:[indexPath], with: .automatic)
+                    self.tableView.endUpdates()
                 case .failure(let error):
                     print(error)
                 }
+                
             }
         }
-    }
-    
-    func reverseComplete(gestureReconizer: UILongPressGestureRecognizer){
-        
-        let longPress = gestureReconizer as UILongPressGestureRecognizer
-        _ = longPress.state
-        let locationInView = longPress.location(in: self.tableView)
-        let indexPath = self.tableView.indexPathForRow(at: locationInView)
-        let training = trainingList[indexPath!.row]
-        trainingList.remove(at: indexPath!.row)
-        let token = UserDefaults.standard.string(forKey: "token")
-        let id = UserDefaults.standard.string(forKey: "id")
-        let headers: HTTPHeaders = [
-            "Authorization": "Bearer " + token!,
-            "Accept": "application/json"
-        ]
-        let url = "http://followfitness.herokuapp.com/api/"+id!+"/trainings/" + training.id + "/reverseiscompleted"
-        Alamofire.request(url, method: .put, headers: headers).responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                print(JSON(value))
-                self.tableView.reloadData()
-
-            case .failure(let error):
-                print(error)
-            }
-        }
-
-
-    
     }
 }

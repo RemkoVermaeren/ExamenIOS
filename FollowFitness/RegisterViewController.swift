@@ -15,23 +15,19 @@ class RegisterViewController: UIViewController{
     
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
-    
+    @IBOutlet weak var errorlabel: UILabel!
+
     @IBAction func register(_ sender: Any) {
-        let parameters: Parameters = [
-            "username": username.text!,
-            "password": password.text!
-        ]
         
-        Alamofire.request("http://followfitness.herokuapp.com/register",method: .post,parameters: parameters, encoding: URLEncoding.httpBody).responseJSON {
+        
+        Service.shared.register(username: username.text!, password: password.text!){
             response in
-            switch response.result {
+            switch response {
             case .success(let value):
-                let json = JSON(value)
-                print("Token: \(json["token"])")
+                self.performSegue(withIdentifier: "showTrainings", sender: self)
             case .failure(let error):
-                print(error)
+                self.errorlabel.text = "\(error)"
             }
         }
-
     }
 }

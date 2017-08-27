@@ -21,21 +21,12 @@ class CompletedTrainingViewController : UITableViewController {
     
     func loadCompletedTrainings(){
         trainingList.removeAll()
-        let token = UserDefaults.standard.string(forKey: "token")
-        let id = UserDefaults.standard.string(forKey: "id")
-        let headers: HTTPHeaders = [
-            "Authorization": "Bearer " + token!,
-            "Accept": "application/json"
-        ]
-        Alamofire.request("http://followfitness.herokuapp.com/api/"+id!+"/completedtrainings", method: .get, headers: headers).responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                for (_,subJson):(String, JSON) in json {
-                    self.trainingList.append(Training.init(json: subJson))
-                }
+        Service.shared.getCompletedTrainings { response in
+            switch response {
+            case .success( let trainings) :
+                self.trainingList = trainings as! [Training]
                 self.tableView.reloadData()
-            case .failure(let error):
+            case .failure (let error) :
                 print(error)
             }
         }

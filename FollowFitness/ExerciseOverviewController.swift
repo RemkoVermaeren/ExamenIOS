@@ -23,29 +23,18 @@ class ExerciseOverviewViewController: UITableViewController {
     }
     func loadExercises(){
         exercises.removeAll()
-        let token = UserDefaults.standard.string(forKey: "token")
-        let id = UserDefaults.standard.string(forKey: "id")
-        let headers: HTTPHeaders = [
-            "Authorization": "Bearer " + token!,
-            "Accept": "application/json"
-        ]
-        let url = "http://followfitness.herokuapp.com/api/"+id!+"/trainings/" + training!.id + "/exercises"
-        Alamofire.request(url, method: .get, headers: headers).responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                for (_,subJson):(String, JSON) in json {
-                    self.exercises.append(Exercise.init(json: subJson))
-                }
+        Service.shared.getExercises(trainingId: training!.id){ response in
+            switch response {
+            case .success( let value) :
+                self.exercises = value as! [Exercise]
                 self.tableView.reloadData()
-            case .failure(let error):
+            case .failure (let error) :
                 print(error)
             }
         }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -87,21 +76,13 @@ class ExerciseOverviewViewController: UITableViewController {
             if editingStyle == .delete {
                 self.tableView.beginUpdates()
                 let exercise = exercises[indexPath.row]
-                exercises.remove(at: indexPath.row)
-                tableView.deleteRows(at:[indexPath], with: .automatic)
-                self.tableView.endUpdates()
-                
-                let token = UserDefaults.standard.string(forKey: "token")
-                let id = UserDefaults.standard.string(forKey: "id")
-                let headers: HTTPHeaders = [
-                    "Authorization": "Bearer " + token!,
-                    "Accept": "application/json"
-                ]
-                let url = "http://followfitness.herokuapp.com/api/"+id!+"/trainings/" + training!.id + "/exercises/" + exercise.id
-                Alamofire.request(url, method: .delete, headers: headers).responseJSON { response in
-                    switch response.result {
-                    case .success(let value):
-                        print(JSON(value))
+                Service.shared.deleteExercise(trainingId: training!.id, exerciseId: exercise.id){
+                    response in
+                    switch response {
+                    case .success( _):
+                        self.exercises.remove(at: indexPath.row)
+                        self.tableView.deleteRows(at:[indexPath], with: .automatic)
+                        self.tableView.endUpdates()
                     case .failure(let error):
                         print(error)
                     }

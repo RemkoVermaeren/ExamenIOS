@@ -6,9 +6,9 @@ Door Remko Vermaeren - Klas 3D
 
 ## FollowFitness
 
-Via de FollowFitness app kan een gebruiker zich inloggen of registreren. Eens ingelogged heeft een gebruiker een overzicht van alle trainingen. Een training bevat oefeningen die gebruiker kan toevoegen en verwijderen. De applictie maakt gebruik van AlamoFire en SwiftyJSON.
+Via de FollowFitness app kan een gebruiker zich inloggen of registreren. Eens ingelogged heeft een gebruiker een overzicht van alle trainingen. De trainingen zijn opgesplitst in afgewerkte en niet afgewerkte trainingen. Een training bevat oefeningen die de gebruiker kan toevoegen of verwijderen. De applicatie maakt gebruik van AlamoFire, SwiftyJSON en MGSwipeTableCell.
 
-De applicatie is gebasseerd op http://followfitness.herokuapp.com. Een gebruiker kan dus de iOS applicatie of de web applicatie gebruiken.
+De applicatie is gebasseerd op http://followfitness.herokuapp.com. Een gebruiker kan de iOS applicatie of de web applicatie gebruiken.
 
 ## Installatie
 

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 import SwiftyJSON
+import MGSwipeTableCell
 
 class TrainingOverviewViewController: UITableViewController {
     var trainingList : [Training] = []
@@ -55,13 +56,41 @@ class TrainingOverviewViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "trainingCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "trainingCell", for: indexPath) as! MGSwipeTableCell
         let training = trainingList[indexPath.row]
         cell.textLabel!.text = "\(training.name)"
         let formatterToNewDate = DateFormatter()
         formatterToNewDate.dateFormat = "EEEE, MMM d, yyyy"
         let dateAsString = formatterToNewDate.string(from: training.date as Date)
         cell.detailTextLabel!.text = dateAsString
+        
+        let button : MGSwipeButton = MGSwipeButton(title: "Done", backgroundColor: .green) {
+            (sender: MGSwipeTableCell!) -> Bool in
+            let indexPath = self.tableView.indexPath(for: cell)
+            let training = self.trainingList[indexPath!.row]
+            self.trainingList.remove(at: indexPath!.row)
+            let token = UserDefaults.standard.string(forKey: "token")
+            let id = UserDefaults.standard.string(forKey: "id")
+            let headers: HTTPHeaders = [
+                "Authorization": "Bearer " + token!,
+                "Accept": "application/json"
+            ]
+            let url = "http://followfitness.herokuapp.com/api/"+id!+"/trainings/" + training.id + "/reverseiscompleted"
+            Alamofire.request(url, method: .put, headers: headers).responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    print(JSON(value))
+                    self.tableView.reloadData()
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            
+            return true
+        }
+        cell.leftButtons = [button]
+        cell.leftSwipeSettings.transition = .drag
         return cell
     }
     
@@ -106,5 +135,35 @@ class TrainingOverviewViewController: UITableViewController {
                 }
             }
         }
+    }
+    
+    func reverseComplete(gestureReconizer: UILongPressGestureRecognizer){
+        
+        let longPress = gestureReconizer as UILongPressGestureRecognizer
+        _ = longPress.state
+        let locationInView = longPress.location(in: self.tableView)
+        let indexPath = self.tableView.indexPathForRow(at: locationInView)
+        let training = trainingList[indexPath!.row]
+        trainingList.remove(at: indexPath!.row)
+        let token = UserDefaults.standard.string(forKey: "token")
+        let id = UserDefaults.standard.string(forKey: "id")
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer " + token!,
+            "Accept": "application/json"
+        ]
+        let url = "http://followfitness.herokuapp.com/api/"+id!+"/trainings/" + training.id + "/reverseiscompleted"
+        Alamofire.request(url, method: .put, headers: headers).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                print(JSON(value))
+                self.tableView.reloadData()
+
+            case .failure(let error):
+                print(error)
+            }
+        }
+
+
+    
     }
 }

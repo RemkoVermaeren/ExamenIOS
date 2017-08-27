@@ -273,7 +273,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="trainingCell" textLabel="zSM-rS-N1r" detailTextLabel="erF-oq-7RG" style="IBUITableViewCellStyleSubtitle" id="3p5-wK-i9d" userLabel="trainingCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="trainingCell" textLabel="zSM-rS-N1r" detailTextLabel="erF-oq-7RG" style="IBUITableViewCellStyleSubtitle" id="3p5-wK-i9d" userLabel="trainingCell" customClass="MGSwipeTableCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3p5-wK-i9d" id="eQK-r9-Vxq">

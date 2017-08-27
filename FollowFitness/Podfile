@@ -5,6 +5,7 @@ use_frameworks!
 target 'FollowFitness' do
 pod 'Alamofire', '~> 4.4'
 pod 'SwiftyJSON'
+pod 'MGSwipeTableCell'
 
 
 

@@ -10,6 +10,8 @@ Via de FollowFitness app kan een gebruiker zich inloggen of registreren. Eens in
 
 De applicatie is gebasseerd op http://followfitness.herokuapp.com. Een gebruiker kan de iOS applicatie of de web applicatie gebruiken.
 
+`In recente trainingen kan de gebruiker links swipen om de training te archiveren en rechts swipen om de training te verwijderen.`
+
 ## Installatie
 
 1. Download het project.

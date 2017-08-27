@@ -1,13 +1,13 @@
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class AddingExerciseViewController: UITableViewController {
     
     @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var kiloField: UITextField!
-    @IBOutlet weak var setField: UITextField!
-    @IBOutlet weak var repeatField: UITextField!
+    @IBOutlet weak var machineField: UITextField!
     
-    var exercise: Exercise?
+    var training: Training?
     
     
     
@@ -17,14 +17,31 @@ class AddingExerciseViewController: UITableViewController {
     
     
     @IBAction func save() {
-//        if let name = nameField.text , name.characters.count > 1 {
-//            let kilo = Int(kiloField.text!)
-//            let set = Int(setField.text!)
-//            let repeats = Int(repeatField.text!)
-//            exercise = Exercise()
-//            exercise?.name = name
-//            //exercise?.sets = set!
-//            performSegue(withIdentifier: "addedExercise", sender: self)
-//        }
+    if let n = nameField.text , n.characters.count >= 1 {
+        let machine = machineField?.text
+        
+        let parameters: Parameters = [
+            "name": n,
+            "machine": machine!,
+        ]
+        let token = UserDefaults.standard.string(forKey: "token")
+        let id = UserDefaults.standard.string(forKey: "id")
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer " + token!,
+            "Accept": "application/json"
+        ]
+        let url = "http://followfitness.herokuapp.com/api/" + id! + "/trainings/" + training!.id
+        Alamofire.request(url,method: .post, parameters: parameters, headers: headers).responseJSON {
+            response in
+            switch response.result {
+            case .success(let value):
+                print(JSON(value))
+                self.performSegue(withIdentifier: "saveExercise", sender: self)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+    }
     }
 }

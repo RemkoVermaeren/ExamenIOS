@@ -55,14 +55,14 @@ class TrainingOverviewViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "trainingCell", for: indexPath)
-                let training = trainingList[indexPath.row]
-                cell.textLabel!.text = "\(training.name)"
-                let formatterToNewDate = DateFormatter()
-                formatterToNewDate.dateFormat = "EEEE, MMM d, yyyy"
-                let dateAsString = formatterToNewDate.string(from: training.date as Date)
-                cell.detailTextLabel!.text = dateAsString
-                return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "trainingCell", for: indexPath)
+        let training = trainingList[indexPath.row]
+        cell.textLabel!.text = "\(training.name)"
+        let formatterToNewDate = DateFormatter()
+        formatterToNewDate.dateFormat = "EEEE, MMM d, yyyy"
+        let dateAsString = formatterToNewDate.string(from: training.date as Date)
+        cell.detailTextLabel!.text = dateAsString
+        return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -71,10 +71,6 @@ class TrainingOverviewViewController: UITableViewController {
             let destination = segue.destination as! ExerciseOverviewViewController
             let selectedIndex = tableView.indexPathForSelectedRow!.row
             destination.training = trainingList[selectedIndex]
-            case "logOut":
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                UIApplication.shared.keyWindow?.rootViewController = storyboard.instantiateViewController(withIdentifier: "loginController")
-            // TODO RESET LOGINGCONTROLLER
         default:
             break
         }
@@ -83,7 +79,7 @@ class TrainingOverviewViewController: UITableViewController {
     @IBAction func unwindFromAdd(_ segue: UIStoryboardSegue) {
         loadTraining()
     }
-
+    
     
     /* Overriding this method triggers swipe actions (e.g. swipe to delete) */
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -93,7 +89,7 @@ class TrainingOverviewViewController: UITableViewController {
             trainingList.remove(at: indexPath.row)
             tableView.deleteRows(at:[indexPath], with: .automatic)
             self.tableView.endUpdates()
-
+            
             let token = UserDefaults.standard.string(forKey: "token")
             let id = UserDefaults.standard.string(forKey: "id")
             let headers: HTTPHeaders = [
@@ -109,8 +105,6 @@ class TrainingOverviewViewController: UITableViewController {
                     print(error)
                 }
             }
-            }
+        }
     }
-    
-   
 }

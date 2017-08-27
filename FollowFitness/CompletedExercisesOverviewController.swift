@@ -39,7 +39,6 @@ class CompletedExercisesOverviewController : UITableViewController {
         cell.machine.text = "\(exercise.machine)"
         return cell
     }
-    // Moet werken maar krijg error bij de detail segue
             override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                 switch segue.identifier! {
                 case "sets":

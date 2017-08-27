@@ -11,6 +11,7 @@ import UIKit
 
 class SetOverviewViewController : UITableViewController {
     
+    var trainingId : String = ""
     var exercise: Exercise?
     
     override func viewDidLoad() {
@@ -35,6 +36,30 @@ class SetOverviewViewController : UITableViewController {
         cell.kilos.text = "\(set!.weights) kg"
         cell.repeats.text = "\(set!.repeats) times"
         return cell
-    }    
-
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier! {
+        case "addSet":
+            let destination = segue.destination as! AddingSetViewController
+            destination.trainingId = trainingId
+            destination.exerciseId = exercise!.id
+        default:
+            break
+        }
+    }
+    
+    @IBAction func unwindFromAddSet(_ segue: UIStoryboardSegue) {
+        switch segue.identifier! {
+            case "saveSet":
+            let origin = segue.source as! AddingSetViewController
+            if origin.newSet != nil {
+                exercise?.sets.append(origin.newSet!)
+                self.tableView.reloadData()
+            }
+           
+        default :
+            break
+        }
+    }
 }

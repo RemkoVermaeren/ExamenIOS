@@ -351,7 +351,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="AFY-Du-uq7" kind="show" id="HI5-QZ-9Q5"/>
+                                    <segue destination="AFY-Du-uq7" kind="show" identifier="showSets" id="HI5-QZ-9Q5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -364,7 +364,7 @@
                     <navigationItem key="navigationItem" title="Exercises" id="0of-6B-OCS">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="QCi-1U-ZZH">
                             <connections>
-                                <segue destination="lkQ-ft-VVn" kind="show" id="vRX-Ou-6JY"/>
+                                <segue destination="lkQ-ft-VVn" kind="show" identifier="addExercise" id="vRX-Ou-6JY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -376,21 +376,28 @@
         <!--Sets-->
         <scene sceneID="oEr-aD-jrm">
             <objects>
-                <tableViewController id="AFY-Du-uq7" customClass="DetailViewController" customModule="FollowFitness" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="AFY-Du-uq7" customClass="SetOverviewViewController" customModule="FollowFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1SY-ZO-geh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="setCell" id="W73-fO-BLk">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="setCell" textLabel="sZX-4f-eLp" detailTextLabel="8Ba-J7-AJ5" style="IBUITableViewCellStyleValue1" id="W73-fO-BLk" customClass="SetCell" customModule="FollowFitness" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W73-fO-BLk" id="oeN-A0-aOy">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" fixedFrame="YES" text="Set" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7a-np-mzP" userLabel="NameField">
-                                            <rect key="frame" x="25" y="0.0" width="325" height="43.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sZX-4f-eLp">
+                                            <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Ba-J7-AJ5">
+                                            <rect key="frame" x="316" y="12" width="44" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -398,6 +405,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="kilos" destination="sZX-4f-eLp" id="XuZ-2l-d4D"/>
+                                    <outlet property="repeats" destination="8Ba-J7-AJ5" id="kP1-6f-wJ7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -409,7 +420,7 @@
                     <navigationItem key="navigationItem" title="Sets" id="NoP-dr-FGa">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xXE-pI-bFT">
                             <connections>
-                                <segue destination="pDB-wL-g1w" kind="show" id="tzK-Wu-TjO"/>
+                                <segue destination="pDB-wL-g1w" kind="show" identifier="addSet" id="tzK-Wu-TjO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -450,7 +461,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLE-9h-z3i">
-                                <rect key="frame" x="143.5" y="587" width="89" height="30"/>
+                                <rect key="frame" x="143" y="587" width="89" height="30"/>
                                 <state key="normal" title="Back to login"/>
                                 <connections>
                                     <segue destination="FhG-AJ-8qV" kind="show" id="BkX-hF-SyA"/>
@@ -538,7 +549,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bzA-Fx-XGL" userLabel="Date Field">
-                                                    <rect key="frame" x="28" y="-86" width="320" height="216"/>
+                                                    <rect key="frame" x="27.5" y="-86" width="320" height="216"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="506805832.872926">
                                                         <!--2017-01-22 19:23:52 +0000-->
                                                     </date>
@@ -576,7 +587,7 @@
                             <tableViewSection headerTitle="Description" id="jU5-8O-IhA">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="103" id="YEA-fd-xNa">
-                                        <rect key="frame" x="0.0" y="356" width="375" height="103"/>
+                                        <rect key="frame" x="0.0" y="355.5" width="375" height="103"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YEA-fd-xNa" id="mr9-y6-It8">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="103"/>
@@ -666,7 +677,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Repeat" id="7AZ-cY-Qt7">
+                            <tableViewSection headerTitle="Machine" id="7AZ-cY-Qt7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lPg-Os-dH2">
                                         <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
@@ -692,58 +703,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="kilo" id="3SQ-rt-bgx">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BhD-1W-T8P">
-                                        <rect key="frame" x="0.0" y="255.5" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BhD-1W-T8P" id="szh-pT-8yd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B5q-Fk-cpA">
-                                                    <rect key="frame" x="8" y="8" width="359" height="27"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="B5q-Fk-cpA" secondAttribute="trailing" constant="8" id="3oJ-jE-sy2"/>
-                                                <constraint firstAttribute="bottom" secondItem="B5q-Fk-cpA" secondAttribute="bottom" constant="8" id="A1t-bM-kLY"/>
-                                                <constraint firstItem="B5q-Fk-cpA" firstAttribute="leading" secondItem="szh-pT-8yd" secondAttribute="leading" constant="8" id="Gvg-RU-lV0"/>
-                                                <constraint firstItem="B5q-Fk-cpA" firstAttribute="top" secondItem="szh-pT-8yd" secondAttribute="top" constant="8" id="PAd-jJ-LFN"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="set" id="X0U-bU-mn5">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7UT-NM-szy">
-                                        <rect key="frame" x="0.0" y="355.5" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7UT-NM-szy" id="aEm-C3-EhP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q2N-3T-lSu">
-                                                    <rect key="frame" x="8" y="8" width="359" height="27"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Q2N-3T-lSu" firstAttribute="top" secondItem="aEm-C3-EhP" secondAttribute="top" constant="8" id="Dhy-sV-3Qg"/>
-                                                <constraint firstItem="Q2N-3T-lSu" firstAttribute="leading" secondItem="aEm-C3-EhP" secondAttribute="leading" constant="8" id="TSF-c7-kf7"/>
-                                                <constraint firstAttribute="bottom" secondItem="Q2N-3T-lSu" secondAttribute="bottom" constant="8" id="g03-nW-eeg"/>
-                                                <constraint firstAttribute="trailing" secondItem="Q2N-3T-lSu" secondAttribute="trailing" constant="8" id="uWZ-PT-pjO"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="lkQ-ft-VVn" id="8m2-fJ-0Ev"/>
@@ -751,7 +710,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add a new exercise" id="w3e-m1-zvB">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ZYM-od-FnW"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ZYM-od-FnW">
+                            <connections>
+                                <segue destination="Bej-Lm-ZR8" kind="unwind" identifier="saveExercise" unwindAction="unwindFromAddExercise:" id="wNX-Da-AYi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="zEq-1L-H4r">
                             <connections>
                                 <action selector="save" destination="lkQ-ft-VVn" id="II9-Xj-6jE"/>
@@ -759,20 +722,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="kiloField" destination="B5q-Fk-cpA" id="CWX-Hn-nDS"/>
-                        <outlet property="nameField" destination="fJf-no-dIv" id="7uU-kf-8Yv"/>
-                        <outlet property="repeatField" destination="9JW-8i-SDw" id="38U-PV-9ML"/>
-                        <outlet property="setField" destination="Q2N-3T-lSu" id="edb-Zs-NJe"/>
+                        <outlet property="machineField" destination="9JW-8i-SDw" id="hI3-xN-8mE"/>
+                        <outlet property="nameField" destination="fJf-no-dIv" id="AcE-5L-dXP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSg-Lg-KTo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Bej-Lm-ZR8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6242" y="1128"/>
         </scene>
         <!--Add a new set-->
         <scene sceneID="MsZ-4v-HOY">
             <objects>
-                <tableViewController title="Add a new set" id="pDB-wL-g1w" customClass="AddingSetViewController" sceneMemberID="viewController">
+                <tableViewController title="Add a new set" id="pDB-wL-g1w" customClass="AddingSetViewController" customModule="FollowFitness" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="iUE-Pa-oCW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -837,12 +799,26 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add a new set" id="lBv-x3-89B">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Oqe-iI-cS3">
+                            <connections>
+                                <segue destination="4Rv-EV-x7q" kind="unwind" identifier="saveSet" unwindAction="unwindFromAddSet:" id="A4r-ip-NhM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ZPd-Ml-PKc">
+                            <connections>
+                                <action selector="save" destination="pDB-wL-g1w" id="sYh-n0-xAp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="kilos" destination="VxT-oj-0uJ" id="m4n-AQ-49N"/>
                         <outlet property="repeats" destination="x1E-VN-qwb" id="DzT-0e-ZAj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9U7-e5-YV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4Rv-EV-x7q" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6994" y="1128"/>
         </scene>

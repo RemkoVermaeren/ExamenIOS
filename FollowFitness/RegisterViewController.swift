@@ -23,7 +23,7 @@ class RegisterViewController: UIViewController{
         Service.shared.register(username: username.text!, password: password.text!){
             response in
             switch response {
-            case .success(let value):
+            case .success( _):
                 self.performSegue(withIdentifier: "showTrainings", sender: self)
             case .failure(let error):
                 self.errorlabel.text = "\(error)"

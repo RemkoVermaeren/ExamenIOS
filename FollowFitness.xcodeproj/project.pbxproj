@@ -12,6 +12,13 @@
 		2914093E1E352F3E00B2727F /* TrainingOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2914093D1E352F3E00B2727F /* TrainingOverviewController.swift */; };
 		291409421E35379C00B2727F /* AddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291409411E35379C00B2727F /* AddingViewController.swift */; };
 		291C0A571F488E590076376E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 291C0A561F488E590076376E /* Podfile */; };
+		291FE8651F520BD100491380 /* AddingSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291FE8641F520BD100491380 /* AddingSetViewController.swift */; };
+		291FE8671F52459B00491380 /* CompletedTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291FE8661F52459B00491380 /* CompletedTrainingViewController.swift */; };
+		291FE8691F52472300491380 /* DetailCompletedTrainingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291FE8681F52472300491380 /* DetailCompletedTrainingController.swift */; };
+		291FE86B1F524BAE00491380 /* CompletedExercisesOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291FE86A1F524BAE00491380 /* CompletedExercisesOverviewController.swift */; };
+		291FE86D1F524C5300491380 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291FE86C1F524C5300491380 /* ExerciseCell.swift */; };
+		291FE86F1F525D3200491380 /* SetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291FE86E1F525D3200491380 /* SetCell.swift */; };
+		291FE8711F525D6C00491380 /* SetOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291FE8701F525D6C00491380 /* SetOverviewViewController.swift */; };
 		2920E6B01E32714A009343D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2920E6AF1E32714A009343D7 /* AppDelegate.swift */; };
 		2920E6B51E32714A009343D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2920E6B31E32714A009343D7 /* Main.storyboard */; };
 		2920E6B71E32714A009343D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2920E6B61E32714A009343D7 /* Assets.xcassets */; };
@@ -46,6 +53,13 @@
 		2914093D1E352F3E00B2727F /* TrainingOverviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingOverviewController.swift; sourceTree = "<group>"; };
 		291409411E35379C00B2727F /* AddingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingViewController.swift; sourceTree = "<group>"; };
 		291C0A561F488E590076376E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		291FE8641F520BD100491380 /* AddingSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingSetViewController.swift; sourceTree = "<group>"; };
+		291FE8661F52459B00491380 /* CompletedTrainingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedTrainingViewController.swift; sourceTree = "<group>"; };
+		291FE8681F52472300491380 /* DetailCompletedTrainingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCompletedTrainingController.swift; sourceTree = "<group>"; };
+		291FE86A1F524BAE00491380 /* CompletedExercisesOverviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedExercisesOverviewController.swift; sourceTree = "<group>"; };
+		291FE86C1F524C5300491380 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
+		291FE86E1F525D3200491380 /* SetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetCell.swift; sourceTree = "<group>"; };
+		291FE8701F525D6C00491380 /* SetOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetOverviewViewController.swift; sourceTree = "<group>"; };
 		2920E6AC1E32714A009343D7 /* FollowFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FollowFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2920E6AF1E32714A009343D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2920E6B41E32714A009343D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +109,13 @@
 				29C9BB541F4B5F29008EA22A /* LoginViewController.swift */,
 				29C9BB561F4B6BD2008EA22A /* RegisterViewController.swift */,
 				29EB220C1F4D07FD00CA934C /* TabController.swift */,
+				291FE8641F520BD100491380 /* AddingSetViewController.swift */,
+				291FE8661F52459B00491380 /* CompletedTrainingViewController.swift */,
+				291FE8681F52472300491380 /* DetailCompletedTrainingController.swift */,
+				291FE86A1F524BAE00491380 /* CompletedExercisesOverviewController.swift */,
+				291FE86C1F524C5300491380 /* ExerciseCell.swift */,
+				291FE86E1F525D3200491380 /* SetCell.swift */,
+				291FE8701F525D6C00491380 /* SetOverviewViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -284,13 +305,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C9BB551F4B5F29008EA22A /* LoginViewController.swift in Sources */,
+				291FE86D1F524C5300491380 /* ExerciseCell.swift in Sources */,
 				29EB220D1F4D07FD00CA934C /* TabController.swift in Sources */,
 				29C9BB571F4B6BD2008EA22A /* RegisterViewController.swift in Sources */,
 				292DDFA21E3569F1004A8E7F /* DetailViewController.swift in Sources */,
 				2914093E1E352F3E00B2727F /* TrainingOverviewController.swift in Sources */,
 				291409341E35135300B2727F /* Training.swift in Sources */,
 				2920E6B01E32714A009343D7 /* AppDelegate.swift in Sources */,
+				291FE86F1F525D3200491380 /* SetCell.swift in Sources */,
+				291FE8711F525D6C00491380 /* SetOverviewViewController.swift in Sources */,
+				291FE8651F520BD100491380 /* AddingSetViewController.swift in Sources */,
+				291FE86B1F524BAE00491380 /* CompletedExercisesOverviewController.swift in Sources */,
+				291FE8671F52459B00491380 /* CompletedTrainingViewController.swift in Sources */,
 				291409321E35128D00B2727F /* Exercise.swift in Sources */,
+				291FE8691F52472300491380 /* DetailCompletedTrainingController.swift in Sources */,
 				2948AE451E3556D200A0BF65 /* ExerciseOverviewController.swift in Sources */,
 				291409421E35379C00B2727F /* AddingViewController.swift in Sources */,
 				29C9BB591F4B83CF008EA22A /* Set.swift in Sources */,

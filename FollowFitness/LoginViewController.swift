@@ -38,4 +38,9 @@ class LoginViewController : UIViewController {
             }
         }
     }
+    @IBAction func unwindFromLogout(_ segue: UIStoryboardSegue) {
+        UserDefaults.standard.removeObject(forKey: "token")
+        UserDefaults.standard.removeObject(forKey: "id")
+}
+
 }

@@ -20,14 +20,14 @@ class TrainingOverviewViewController: UITableViewController {
     }
     
     func loadTraining(){
-        
+        trainingList.removeAll()
         let token = UserDefaults.standard.string(forKey: "token")
         let id = UserDefaults.standard.string(forKey: "id")
         let headers: HTTPHeaders = [
             "Authorization": "Bearer " + token!,
             "Accept": "application/json"
         ]
-        Alamofire.request("http://followfitness.herokuapp.com/api/"+id!+"/trainings", method: .get, headers: headers).responseJSON { response in
+        Alamofire.request("http://followfitness.herokuapp.com/api/"+id!+"/uncompletedtrainings", method: .get, headers: headers).responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -72,8 +72,8 @@ class TrainingOverviewViewController: UITableViewController {
             let selectedIndex = tableView.indexPathForSelectedRow!.row
             destination.training = trainingList[selectedIndex]
             case "logOut":
-            UserDefaults.standard.removeObject(forKey: "token")
-            UserDefaults.standard.removeObject(forKey: "id")
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                UIApplication.shared.keyWindow?.rootViewController = storyboard.instantiateViewController(withIdentifier: "loginController")
             // TODO RESET LOGINGCONTROLLER
         default:
             break
@@ -81,31 +81,35 @@ class TrainingOverviewViewController: UITableViewController {
     }
     
     @IBAction func unwindFromAdd(_ segue: UIStoryboardSegue) {
-        let source = segue.source as! AddingViewController
-        if source.training != nil {
-            tableView.beginUpdates()
-//            try! self.realm.write({
-//                self.realm.add(training)
-//                self.tableView.insertRows(at: [IndexPath.init(row: self.trainingList.count-1, section: 0)], with: .automatic)
-//            })
-            tableView.endUpdates()
-        }
+        loadTraining()
     }
+
     
     /* Overriding this method triggers swipe actions (e.g. swipe to delete) */
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            tableView.beginUpdates()
-                _ = trainingList[indexPath.row]
-//                try! self.realm.write({
-//                    self.realm.delete(item)
-//                })
-            
-                tableView.deleteRows(at:[indexPath], with: .automatic)
-                
+            self.tableView.beginUpdates()
+            let training = trainingList[indexPath.row]
+            trainingList.remove(at: indexPath.row)
+            tableView.deleteRows(at:[indexPath], with: .automatic)
+            self.tableView.endUpdates()
+
+            let token = UserDefaults.standard.string(forKey: "token")
+            let id = UserDefaults.standard.string(forKey: "id")
+            let headers: HTTPHeaders = [
+                "Authorization": "Bearer " + token!,
+                "Accept": "application/json"
+            ]
+            let url = "http://followfitness.herokuapp.com/api/"+id!+"/trainings/" + training.id
+            Alamofire.request(url, method: .delete, headers: headers).responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    print(JSON(value))
+                case .failure(let error):
+                    print(error)
+                }
             }
-            tableView.endUpdates()
-        
+            }
     }
     
    

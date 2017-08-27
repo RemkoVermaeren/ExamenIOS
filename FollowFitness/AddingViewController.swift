@@ -18,11 +18,10 @@ class AddingViewController: UITableViewController {
     
 
     @IBAction func save() {
-        if let n = nameField.text , n.characters.count > 1 {
+        if let n = nameField.text , n.characters.count > 0 {
             let date = dateField?.date
             let description = descriptionField?.text
             let isCompleted = isCompletedField?.isOn
-            //                    self.performSegue(withIdentifier: "added", sender: self)
 
             Service.shared.saveTraining(name: n, description: description!, date: date!, isCompleted: isCompleted!){
                 response in switch response {

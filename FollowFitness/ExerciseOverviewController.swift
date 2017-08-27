@@ -19,7 +19,6 @@ class ExerciseOverviewViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadExercises()
-        //Load the cell elements
     }
     func loadExercises(){
         exercises.removeAll()
@@ -46,9 +45,10 @@ class ExerciseOverviewViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath) as! ExerciseCell
         let exercise = exercises[indexPath.row]
-        cell.textLabel!.text = "\(exercise.name)"
+        cell.name.text = "\(exercise.name)"
+        cell.machine.text = "\(exercise.machine)"
         return cell
         
         

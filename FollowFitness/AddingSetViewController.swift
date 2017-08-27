@@ -26,11 +26,10 @@ class AddingSetViewController : UITableViewController {
     
     
     @IBAction func save() {
-        if let n = repeats.text , n.characters.count > 0 {
-            let kilo = kilos?.text
-            self.newSet = Set.init(id: "", repeats: Int(n)!, weights: Int(kilo!)!)
+        if let n = repeats.text , n.characters.count > 0, let kilo = kilos.text, kilo.characters.count > 0  {
+            self.newSet = Set.init(id: "", repeats: Int(n)!, weights: Int(kilo)!)
 
-            Service.shared.saveSet(weights: Int(kilo!)!, repeats: Int(n)!, trainingId: trainingId, exerciseId: exerciseId) {
+            Service.shared.saveSet(weights: Int(kilo)!, repeats: Int(n)!, trainingId: trainingId, exerciseId: exerciseId) {
                 response in
                 switch response {
                 case .success( _):

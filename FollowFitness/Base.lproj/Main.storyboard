@@ -334,15 +334,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="exerciseCell" textLabel="YaG-sx-ljH" style="IBUITableViewCellStyleDefault" id="jFi-nA-yIv">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="exerciseCell" textLabel="YaG-sx-ljH" detailTextLabel="caQ-yg-3ZG" style="IBUITableViewCellStyleValue1" id="jFi-nA-yIv" customClass="ExerciseCell" customModule="FollowFitness" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jFi-nA-yIv" id="tCJ-D7-XTw">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YaG-sx-ljH" userLabel="NameField">
-                                            <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YaG-sx-ljH">
+                                            <rect key="frame" x="15" y="12" width="64" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="caQ-yg-3ZG">
+                                            <rect key="frame" x="296" y="12" width="44" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -351,6 +358,8 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="machine" destination="caQ-yg-3ZG" id="fOg-wN-Db9"/>
+                                    <outlet property="name" destination="YaG-sx-ljH" id="GkF-2J-tBz"/>
                                     <segue destination="AFY-Du-uq7" kind="show" identifier="showSets" id="HI5-QZ-9Q5"/>
                                 </connections>
                             </tableViewCell>

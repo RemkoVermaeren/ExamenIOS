@@ -17,9 +17,8 @@ class AddingExerciseViewController: UITableViewController {
     
     
     @IBAction func save() {
-    if let n = nameField.text , n.characters.count >= 1 {
-        let machine = machineField?.text
-        Service.shared.saveExercise(name: n, machine: machine!, trainingId: training!.id){
+    if let n = nameField.text , n.characters.count > 0, let machine = machineField.text , machine.characters.count > 0 {
+        Service.shared.saveExercise(name: n, machine: machine, trainingId: training!.id){
             response in
             switch response {
             case .success( _):
